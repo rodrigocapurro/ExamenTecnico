@@ -1,0 +1,39 @@
+<div class="card">
+    <h1 style="text-align: center;">Search Book</h1>
+    <p-tabView>
+        <p-tabPanel header="Base completa de libros">
+            <app-table-filtered 
+            [books]="books"
+            [booksFilterSearch]="booksFilterSearch"
+            [isFilterSeach]="true"
+            [addNew]="true"
+            [isFilter]="true"
+            [placeHolder]="'Search Book'"
+            [loading] = "loading">
+        </app-table-filtered>
+        </p-tabPanel>
+        <p-tabPanel header="Buscar libros por Título">
+            <app-table-filtered 
+                [books]="books"
+                [booksFilterSearch]="booksByTitle"
+                [isFilterSeach]="false"
+                [addNew]="false"
+                [placeHolder]="'Enter Title'"
+                [isTitle]="true"
+                [loading] = "loading">
+            </app-table-filtered>
+        </p-tabPanel>
+        <p-tabPanel header="Buscar libros por Author">
+            <app-table-filtered 
+            [books]="books"
+            [booksFilterSearch]="booksByAuthor"
+            [isFilterSeach]="false"
+            [addNew]="false"
+            [placeHolder]="'Enter Author'"
+            [isTitle]="false"
+            [loading] = "loading">
+        </app-table-filtered>
+        </p-tabPanel>
+    </p-tabView>
+</div>
+
